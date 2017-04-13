@@ -18,7 +18,7 @@
       node.addEventListener('click', addScript);
 
       // log using ecma6 template literals
-      console.log(`handler ${node.dataset.id} set up!`);
+      console.log(`handler for ${node.dataset.script} set up!`);
     }
   }
 
@@ -28,8 +28,22 @@
   * @return
   */
   function addScript(event) {
+    let scriptTagName = event.target.dataset.script
+
+    /*************************************
+     * Check if script is already loaded *
+     * if script exist not load again    *
+     *************************************/
+    let dataset = `script[data-script="${scriptTagName}"]`;
+    if (document.querySelector(dataset)) {
+      console.log(`script ${scriptTagName} is already loaded!`);
+      return;
+    }
+
+    // Add script element to dom
     let scriptTag = document.createElement('script');
-    scriptTag.src = SCRIPT_CHAPTERS_BASE_ROUTE + event.target.dataset.script + SCRIPT_FILE_TYPE;
+    scriptTag.src = SCRIPT_CHAPTERS_BASE_ROUTE + scriptTagName + SCRIPT_FILE_TYPE;
+    scriptTag.dataset.script = scriptTagName;
     document.body.appendChild(scriptTag);
   }
 
