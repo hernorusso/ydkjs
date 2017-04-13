@@ -5,18 +5,21 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Practice JDKJS</title>
   <link rel="stylesheet/less" type="text/css" href="styles/style.less" />
+  <!-- For testing purposes we include less in the browser. Should be removed at a later stage -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"></script>
+  <!-- / loading less -->
 </head>
 <body>
   <h1>This is JDKJ practice site</h1>
-  <p>Please choose a chapter to start testing JS</p>
-  <div class="chapters">
+  <section id="chapters">
+    <h2>Chapters</h2>
+    <p>Please choose a chapter to start testing JS</p>
     <ul>
       <li data-script="ch1">Chapter 1</li>
       <li data-script="ch2">Chapter 2</li>
       <li data-script="ch3">Chapter 3</li>
     </ul>
-  </div>
+  </section>
   <script src="scripts/main.js"></script>
 </body>
 </html>
