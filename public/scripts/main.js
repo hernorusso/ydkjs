@@ -18,7 +18,7 @@
       node.addEventListener('click', addScript);
 
       // log using ecma6 template literals
-      console.log(`handler ${node.dataset.id} setup`);
+      console.log(`handler ${node.dataset.id} set up!`);
     }
   }
 
