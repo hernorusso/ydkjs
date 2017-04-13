@@ -1,4 +1,4 @@
 (function(script){
   'use strict';
-  console.log(script, 'loaded!')
+  console.log(`script ${script} loaded!`);
 })('ch1');
