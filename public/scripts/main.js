@@ -1,6 +1,8 @@
 (function() {
   'use strict';
   document.addEventListener('DOMContentLoaded', function() {
+    // For tracking purposes
+    console.log('document loaded');
 
     //  Set up constants
     const SCRIPT_BASE_ROUTE = 'scripts/'
