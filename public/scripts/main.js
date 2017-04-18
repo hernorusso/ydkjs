@@ -5,6 +5,18 @@
   const SCRIPT_CHAPTERS_BASE_ROUTE = 'scripts/chapters/'
   const SCRIPT_FILE_TYPE = '.js'
 
+  /********************************************
+  * On Load attach listener to list elements *
+  * Also, log the loaded event               *
+  ********************************************/
+  document.addEventListener('DOMContentLoaded', function() {
+    // For tracking purposes
+    console.log('document loaded');
+    // set global to expose run method over loaded scripts
+    window.chapterScript = {};
+    setupHandlers();
+  });
+
   /**
    * Setup an event handler for each chapter (li) item
    * @return {undefined}
@@ -46,15 +58,5 @@
     scriptTag.dataset.script = scriptTagName;
     document.body.appendChild(scriptTag);
   }
-
-  /********************************************
-   * On Load attach listener to list elements *
-   * Also, log the loaded event               *
-   ********************************************/
-  document.addEventListener('DOMContentLoaded', function() {
-    // For tracking purposes
-    console.log('document loaded');
-    setupHandlers();
-  });
 
 })();
